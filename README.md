@@ -1,16 +1,20 @@
 # try-mermaidjs
 
-## Ref
+## ■Version
+
+7.1.2
+
+## ■Ref
 
 https://github.com/knsv/mermaid
 
 https://mermaidjs.github.io/
 
-## Sample1
+## ■Example
 
-![pubsub](pubsub.png)
+### 【フローチャート】
 
-Source
+こう書くと
 <pre>
     graph LR;
       OS(Outer System) -- REST --> PUB(Publisher);
@@ -33,11 +37,13 @@ Source
       DS4((NoSQL)) --> GW;
 </pre>
 
-## Sample2
+こう表示される
 
-![sequence](sequence.png)
+![pubsub](pubsub.png)
 
-Source
+### 【シーケンス図】
+
+こう書くと
 <pre>
     sequenceDiagram
       participant M as MainApp
@@ -66,3 +72,7 @@ Source
 
       end
 </pre>
+
+こう表示される
+
+![sequence](sequence.png)
