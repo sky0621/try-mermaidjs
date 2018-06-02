@@ -6,7 +6,7 @@ https://github.com/knsv/mermaid
 
 https://mermaidjs.github.io/
 
-## Sample
+## Sample1
 
 ![pubsub](pubsub.png)
 
@@ -32,4 +32,38 @@ Source
       DS2((NoSQL)) --> SUB;
       DS3((NoSQL)) --> S2;
       DS4((NoSQL)) --> GW;
+</pre>
+
+## Sample2
+
+![sequence](sequence.png)
+
+Source
+<pre>
+    sequenceDiagram
+      participant M as MainApp
+
+      participant Q as Queue
+      Note right of Q: Target SQS
+
+      participant C as Cache
+      Note right of C: in MainApp cache
+
+      participant A as AccountService
+      Note right of A: gRPC connection
+
+      M ->> +Q: getMessages()
+      Q --x -M: messages
+
+      loop Every messages
+
+        alt hasCacheAccount
+          M ->> +C: getAccountFromCache()
+          C --x -M: account
+        else
+          M ->> +A: getAccount()
+          A --x -M: account
+        end
+
+      end
 </pre>
