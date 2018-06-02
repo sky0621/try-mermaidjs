@@ -11,7 +11,6 @@ https://mermaidjs.github.io/
 ![pubsub](pubsub.png)
 
 Source
-
 <pre>
     graph LR;
       OS(Outer System) -- REST --> PUB(Publisher);
