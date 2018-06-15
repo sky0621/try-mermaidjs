@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--link rel="stylesheet" href="mermaid.min.css"-->
+</head>
+<body>
+  <hr/>
+  <div>k8s System</div>
+  <hr/>
+  <div class="mermaid">
+    graph TB
+      subgraph Cluster A
+        subgraph Node 1
+          subgraph Pod#pub
+            Publisher-->LogForwarder
+          end
+          subgraph Pod#sub
+            Subscriber
+          end
+        end
+        subgraph Node 2
+          subgraph Pod#handler1
+            Handler1-->LogForwarder2
+          end
+        end
+        subgraph Node 3
+          subgraph Pod#handler2
+            Handler2
+          end
+          subgraph Pod#handler3
+            Handler3
+          end
+          subgraph Pod#handler4
+            Handler4
+          end
+        end
+      end
+  </div>
+  <hr/>
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true, theme: 'neutral'});</script>
+</body>
+</html>

@@ -76,3 +76,40 @@ https://mermaidjs.github.io/
 こう表示される
 
 ![sequence](sequence.png)
+
+### 【サブグラフ】
+
+こう書くと
+<pre>
+    graph TB
+      subgraph Cluster A
+        subgraph Node 1
+          subgraph Pod#pub
+            Publisher-->LogForwarder
+          end
+          subgraph Pod#sub
+            Subscriber
+          end
+        end
+        subgraph Node 2
+          subgraph Pod#handler1
+            Handler1-->LogForwarder2
+          end
+        end
+        subgraph Node 3
+          subgraph Pod#handler2
+            Handler2
+          end
+          subgraph Pod#handler3
+            Handler3
+          end
+          subgraph Pod#handler4
+            Handler4
+          end
+        end
+      end
+</pre>
+
+こう表示される
+
+![subgraph](subgraph.png)
