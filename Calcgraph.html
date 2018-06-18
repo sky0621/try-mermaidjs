@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--link rel="stylesheet" href="mermaid.min.css"-->
+</head>
+<body>
+  <hr/>
+  <div>Webhook</div>
+  <hr/>
+  <div class="mermaid">
+    graph LR;
+      d01(account-id)
+      d02(api-key)
+      m01(validate)
+
+      d01-->m01
+      d02-->m01
+  </div>
+  <hr/>
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true, theme: 'neutral'});</script>
+</body>
+</html>
