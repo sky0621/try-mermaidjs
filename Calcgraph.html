@@ -10,12 +10,39 @@
   <hr/>
   <div class="mermaid">
     graph LR;
-      d01(account-id)
-      d02(api-key)
-      m01(validate)
+      d001(("【http】"<br/>request))
+      d002(("【struct】"<br/>path))
+      d003(("【struct】"<br/>header))
+      d004(("【struct】"<br/>body))
 
-      d01-->m01
-      d02-->m01
+      d005((accountID))
+      d006((apiKey))
+
+      d007(("【struct】"<br/>AccountInfo))
+      d008((T:is valid, <br/>F:is not valid))
+
+      m001(ParseRequest)
+      m002(GetAccountID)
+      m003(GetAPIKey)
+      m004(GetAccount)
+      m005(IsValidApiKey)
+
+      d001-->m001
+      m001-->d002
+      m001-->d003
+      m001-->d004
+
+      d002-->m002
+      m002-->d005
+
+      d003-->m003
+      m003-->d006
+
+      d005-->m004
+      m004-->d007
+
+      d006-->m005
+      m005-->d008
   </div>
   <hr/>
   <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
