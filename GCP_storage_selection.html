@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--link rel="stylesheet" href="mermaid.min.css"-->
+</head>
+<body>
+  <hr/>
+  <div>GCP - ストレージ オプションの選択</div>
+  <hr/>
+  <div>Base: https://cloud.google.com/storage-options/?authuser=1&hl=ja</div>
+  <div class="mermaid">
+    graph LR;
+      START --> D01{"扱うのは構造化データ？"};
+
+      D01 -->|Yes| D02{"ワークロードの分析が必要？"};
+      D01 -->|No| Obj01["GCS"];
+
+      D02 -->|Yes| D03{"更新が必要？or低レイテンシが必要？"};
+      D02 -->|No| D04{"リレーションは必要？"};
+
+      D03 -->|Yes| Obj02["Bigtable"];
+      D03 -->|No| Obj03["BigQuery"];
+
+      D04 -->|Yes| D05{"水平スケールは必要？"};
+      D04 -->|No| Obj04["Cloud Datastore"];
+
+      D05 -->|Yes| Obj05["Spanner"];
+      D05 -->|No| Obj06["Cloud SQL"];
+  </div>
+  <hr/>
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true, theme: 'neutral'});</script>
+</body>
+</html>

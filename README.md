@@ -41,6 +41,31 @@ https://mermaidjs.github.io/
 
 ![pubsub](pubsub.png)
 
+こう書くと
+<pre>
+    graph LR;
+      START --> D01{"扱うのは構造化データ？"};
+
+      D01 -->|Yes| D02{"ワークロードの分析が必要？"};
+      D01 -->|No| Obj01["GCS"];
+
+      D02 -->|Yes| D03{"更新が必要？or低レイテンシが必要？"};
+      D02 -->|No| D04{"リレーションは必要？"};
+
+      D03 -->|Yes| Obj02["Bigtable"];
+      D03 -->|No| Obj03["BigQuery"];
+
+      D04 -->|Yes| D05{"水平スケールは必要？"};
+      D04 -->|No| Obj04["Cloud Datastore"];
+
+      D05 -->|Yes| Obj05["Spanner"];
+      D05 -->|No| Obj06["Cloud SQL"];
+</pre>
+
+こう表示される
+
+![GCP_storage_selection](GCP_storage_selection.png)
+
 ### 【シーケンス図】
 
 こう書くと
