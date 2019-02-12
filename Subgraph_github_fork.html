@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--link rel="stylesheet" href="mermaid.min.css"-->
+</head>
+<body>
+  <div class="mermaid">
+    graph TB
+      subgraph github.com
+        subgraph sky1456second#自分のアカウント
+          subgraph Dotato-di-una-libreria
+            subgraph masterブランチ
+            end
+          end
+        end
+        subgraph sky0621#実プロダクトアカウント
+          subgraph Dotato-di-una-libreria
+            subgraph masterブランチ
+            end
+          end
+        end
+      end
+  </div>
+  <hr/>
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({startOnLoad:true, theme: 'neutral'});
+    mermaid.flowchartConfig = {
+      width: 100%
+    }
+  </script>
+</body>
+</html>
