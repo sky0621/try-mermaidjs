@@ -10,13 +10,23 @@
       subgraph github.com
 
       subgraph sky0621
-        Dotato-di-una-libreriaリポジトリ-sky0621
+
+        subgraph Dotato-di-una-libreria
+          masterブランチx
+        end
+
       end
 
       subgraph sky1456second
-        Dotato-di-una-libreriaリポジトリ-sky1456second
-        Dotato-di-una-libreriaリポジトリ-sky0621 --> Dotato-di-una-libreriaリポジトリ-sky1456second
+
+        subgraph Dotato-di-una-libreria
+          masterブランチy
+          masterブランチx --> masterブランチy
+        end
+
       end
+
+      subgraph local
 
       end
   </div>
